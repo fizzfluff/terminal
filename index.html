@@ -160,12 +160,12 @@ $(function () {
   {
     action: 'type',
     strings: ['systemctl status fusky^1000'],
-    output: '<span class="gray">+1 fusky.service <span class="red"FAILED</span> <br>ERROR loading dependencies<br> not all requirements for the success of the program were met.</span><br>&nbsp;',
+    output: '<span class="gray">- +1 fusky.service </span><span class="red"FAILED</span><span class="gray"> <br>- ERROR loading dependencies<br>- not all requirements for the success of the program were met.</span><br>&nbsp;',
     postDelay: 1000 },
   {
     action: 'type',
     strings: ['logros grandes y numerosos no cambian que todavía me siento un fracaso.^1000'],
-    output: '<span class="gray">logros: command not found</span><br>&nbsp;',
+    output: '<span class="gray">> logros: command not found</span><br>&nbsp;',
     postDelay: 1000 },
   {
     action: 'type',
