@@ -1,0 +1,264 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Animated Terminal Session</title>
+
+    <link rel="canonical" href="https://codepen.io/motopor1111/pen/yLGQMdm">
+  
+  
+  
+  
+<style>
+body {
+  background: #6D7074;
+}
+
+
+.terminal-window {
+  text-align: left;
+  width: 1200px;
+  height: 600px;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+}
+
+.terminal-window header {
+  background: #E0E8F0;
+  height: 30px;
+  border-radius: 8px 8px 0 0;
+  padding-left: 1125px;
+}
+
+.terminal-window header .button {
+  width: 12px;
+  height: 12px;
+  margin: 10px 4px 0 0;
+  display: inline-block;
+  border-radius: 0px;
+}
+
+.terminal-window header .button.green {
+  background: #3BB662;
+}
+
+.terminal-window header .button.yellow {
+  background: #E5C30F;
+}
+
+.terminal-window header .button.red {
+  background: #E75448;
+}
+
+.terminal-window section.terminal {
+  color: white;
+  font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+  font-size: 11pt;
+  background: #30353A;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 30px;
+  bottom: 0;
+  overflow: auto;
+}
+
+.terminal-window section.terminal .typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.terminal-data { display: none; }
+.terminal-window .gray { color: gray; }
+.terminal-window .green { color: green;}
+.terminal-window .red { color: red;}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="terminal-window">
+  <header>
+    <div class="button green"></div>
+    <div class="button yellow"></div>
+    <div class="button red"></div>
+  </header>
+  <section class="terminal">
+    <div class="history">$ wget https://github.com/a/a.git<br><span class="gray">- "a" saved [180000]</span><br>&nbsp;<br>$ cd a<br> <br>$ a.sh<br>
+ <br>Script execution<br>
+ ----------------------------------------------<br>
+ Checking dependencies <span class="gray"># ./a/fusky.dep</span><br><br> 
+
+ &nbsp;&nbsp;Creating files: Decompressing and starting fusky.sh<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Tener tus prioridades definidas</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No te dejes llevar por ideologias</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No esperar algo de nada ni de nadie</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Estar dispuesto a sacrificar todo y a todos</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Nunca olvidar los traumas para no cometer los mismos errores</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Comer las migajas de los de arriba y no dejar caer ninguna a los de abajo</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Siempre que algo salga mal es tu culpa y sin importar que tanto influenciaras</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Nunca tendras la razon al 100% asi que callate y escucha a quien esta arriba de ti </span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Todo lo que te hace feliz es un lastre para las hacer las cosas que no te hacen feliz</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Hacer todo lo que puedas antes de tu ultimo descanzo y aceptar al final que pudiste hacer mas </span><br>
+
+ <br>
+    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
+&nbsp;&nbsp;Threads&nbsp;&nbsp;&nbsp;Processess&nbsp;&nbsp;&nbsp;Tasks&nbsp;&nbsp;&nbsp;Passed&nbsp;&nbsp;&nbsp;Failed<br>
+    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
+&nbsp;&nbsp;128&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓ 7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X 3</span>     <br>
+  <br>
+&nbsp;&nbsp;Stopped (Error) in 0.18y<br>
+  <br>
+</div>
+    $&nbsp;<span class="prompt"></span><span class="typed-cursor">|</span><span class="typed-cursor"></span><span class="typed-cursor"></span><span class="typed-cursor"></span>
+    <span class="typed-cursor"></span>
+    
+  </section>
+</div>
+<!-- data -->
+  <div class="terminal-data mimik-run-output">
+ <br>Script execution<br>
+ ----------------------------------------------<br>
+ Checking dependencies <span class="gray"># ./a/fusky.dep</span><br><br> 
+
+ &nbsp;&nbsp;Creating files: Decompressing and starting fusky.sh<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Tener tus prioridades definidas</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No te dejes llevar por ideologias</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No esperar algo de nada ni de nadie</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Estar dispuesto a sacrificar todo y a todos</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Nunca olvidar los traumas para no cometer los mismos errores</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Comer las migajas de los de arriba y no dejar caer ninguna a los de abajo</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Siempre que algo salga mal es tu culpa y sin importar que tanto influenciaras</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Nunca tendras la razon al 100% asi que callate y escucha a quien esta arriba de ti </span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Todo lo que te hace feliz es un lastre para las hacer las cosas que no te hacen feliz</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X</span> <span class="gray">Hacer todo lo que puedas antes de tu ultimo descanzo y aceptar al final que pudiste hacer mas </span><br>
+
+ <br>
+    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
+&nbsp;&nbsp;Threads&nbsp;&nbsp;&nbsp;Processess&nbsp;&nbsp;&nbsp;Tasks&nbsp;&nbsp;&nbsp;Passed&nbsp;&nbsp;&nbsp;Failed<br>
+    <span class="gray">&nbsp;---------- ----------- ------- -------- --------</span><br>
+&nbsp;&nbsp;128&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓ 7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="red">X 3</span>     <br>
+  <br>
+&nbsp;&nbsp;Stopped (Error) in 0.18y<br>
+  <br>
+</div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+      <script id="rendered-js">
+$(function () {
+  var data = [
+  {
+    action: 'type',
+    strings: ["wget https://github.com/a/a.git^400"],
+    output: '<span class="gray">- "a" saved [180000]</span><br>&nbsp;',
+    postDelay: 1000 },
+
+  {
+    action: 'type',
+    strings: ["cd a^400"],
+    output: ' ',
+    postDelay: 1000 },
+
+  {
+    action: 'type',
+    //clear: true,
+    strings: ['a.sh^1000'],
+    output: $('.mimik-run-output').html() },
+
+  {
+    action: 'type',
+    strings: ["No dudes en hablarme, mi discord es (fuskytail)", ''],
+    postDelay: 80000 }];
+
+
+
+  runScripts(data, 0);
+});
+
+function runScripts(data, pos) {
+  var prompt = $('.prompt'),
+  script = data[pos];
+  if (script.clear === true) {
+    $('.history').html('');
+  }
+  switch (script.action) {
+    case 'type':
+      // cleanup for next execution
+      prompt.removeData();
+      $('.typed-cursor').text('');
+      prompt.typed({
+        strings: script.strings,
+        typeSpeed: 30,
+        callback: function () {
+          var history = $('.history').html();
+          history = history ? [history] : [];
+          history.push('$ ' + prompt.text());
+          if (script.output) {
+            history.push(script.output);
+            prompt.html('');
+            $('.history').html(history.join('<br>'));
+          }
+          // scroll to bottom of screen
+          $('section.terminal').scrollTop($('section.terminal').height());
+          // Run next script
+          pos++;
+          if (pos < data.length) {
+            setTimeout(function () {
+              runScripts(data, pos);
+            }, script.postDelay || 1000);
+          }
+        } });
+
+      break;
+    case 'view':
+
+      break;}
+
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>
