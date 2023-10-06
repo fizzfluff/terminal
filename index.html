@@ -112,9 +112,9 @@ body {
   <div class="terminal-data mimik-run-output">
  <br>Script execution<br>
  ----------------------------------------------<br>
- Checking dependencies <span class="gray"># ./a/fusky.dep</span><br><br> 
+ Checking dependencies <span class="gray"># ./fusky/fusky.dep</span><br><br> 
 
- &nbsp;&nbsp;Creating files: Decompressing and starting fusky.sh<br>
+ &nbsp;&nbsp;Creating files: Decompressing and starting fuskytail.sh<br>
     &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Tener tus prioridades definidas</span><br>
  &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No te dejes llevar por ideologias</span><br>
  &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">No esperar algo de nada ni de nadie</span><br>
@@ -142,25 +142,25 @@ $(function () {
   var data = [
   {
     action: 'type',
-    strings: ["wget https://github.com/a/a.git^1000"],
+    strings: ["wget https://github.com/fusky/fusky.git^1000"],
     output: '<span class="gray">- "a" saved [180000]</span><br>&nbsp;',
     postDelay: 1000 },
 
   {
     action: 'type',
-    strings: ["cd a^1000"],
+    strings: ["cd /fusky^1000"],
     output: ' ',
     postDelay: 1000 },
 
   {
     action: 'type',
     //clear: true,
-    strings: ['a.sh^1000'],
+    strings: ['fusky-start.sh^1000'],
     output: $('.mimik-run-output').html() },
   {
     action: 'type',
-    strings: ['systemctl status fusky^1000'],
-    output: '<span class="gray">+1 fusky.service </span><span class="red">FAILED</span><span class="gray"> <br>- ERROR loading dependencies<br>- not all requirements for the success of the program were met.</span><br>&nbsp;',
+    strings: ['systemctl status fuskytail^1000'],
+    output: '<span class="gray">+1 fuskytail.service </span><span class="red">FAILED</span><span class="gray"> <br>- ERROR loading dependencies<br>- not all requirements for the success of the program were met.</span><br>&nbsp;',
     postDelay: 1000 },
   {
     action: 'type',
