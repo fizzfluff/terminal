@@ -142,26 +142,36 @@ $(function () {
   var data = [
   {
     action: 'type',
-    strings: ["wget https://github.com/a/a.git^400"],
+    strings: ["wget https://github.com/a/a.git^1000"],
     output: '<span class="gray">- "a" saved [180000]</span><br>&nbsp;',
     postDelay: 1000 },
 
   {
     action: 'type',
-    strings: ["cd a^400"],
+    strings: ["cd a^1000"],
     output: ' ',
     postDelay: 1000 },
 
   {
     action: 'type',
     //clear: true,
-    strings: ['/a$a.sh^1000'],
+    strings: ['a.sh^1000'],
     output: $('.mimik-run-output').html() },
-
   {
     action: 'type',
-    strings: ["/a$No dudes en hablarme, mi discord es (fuskytail)^1000"],
+    strings: ['systemctl status fusky^1000'],
+    output: '<span class="gray">+1 fusky.service <span class="red"FAILED</span> <br>ERROR loading dependencies<br> not all requirements for the success of the program were met.</span><br>&nbsp;',
+    postDelay: 1000 },
+  {
+    action: 'type',
+    strings: ['logros grandes y numerosos no cambian que todavía me siento un fracaso.^1000'],
+    output: '<span class="gray">logros: command not found</span><br>&nbsp;',
+    postDelay: 1000 },
+  {
+    action: 'type',
+    strings: ["/a$No dudes en hablarme, mi discord es (fuskytail), estoy feliz de hablar y ayudar <3^1000"],
     postDelay: 80000 }];
+  
 
 
 
