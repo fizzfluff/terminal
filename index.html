@@ -112,9 +112,9 @@ body {
   <div class="terminal-data mimik-run-output">
  <br>Script execution<br>
  ----------------------------------------------<br>
- Checking dependencies <span class="gray"># ./fusky/fusky.dep</span><br><br> 
+ Checking dependencies <span class="gray"># ./fizz/fizz.dep</span><br><br> 
 
- &nbsp;&nbsp;Creating files: Decompressing and starting fuskytail.service<br>
+ &nbsp;&nbsp;Creating files: Decompressing and starting fizzfluff.service<br>
     &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Have your priorities defined</span><br>
  &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Don't get carried away by ideologies</span><br>
  &nbsp;&nbsp;&nbsp;&nbsp;<span class="green">✓</span> <span class="gray">Don't expect anything from anything or anyone</span><br>
@@ -142,25 +142,25 @@ $(function () {
   var data = [
   {
     action: 'type',
-    strings: ["wget https://github.com/fusky/fusky.git^1000"],
-    output: '<span class="gray">- "/fusky" saved [180000]</span><br>&nbsp;',
+    strings: ["wget https://github.com/fizz/fizz.git^1000"],
+    output: '<span class="gray">- "/fizz" saved [180000]</span><br>&nbsp;',
     postDelay: 1000 },
 
   {
     action: 'type',
-    strings: ["cd /fusky^1000"],
+    strings: ["cd /fizz^1000"],
     output: ' ',
     postDelay: 1000 },
 
   {
     action: 'type',
     //clear: true,
-    strings: ['fusky-start.sh^1000'],
+    strings: ['fizz-start.sh^1000'],
     output: $('.mimik-run-output').html() },
   {
     action: 'type',
-    strings: ['systemctl status fuskytail^1000'],
-    output: '<span class="gray">+1 fuskytail.service </span><span class="red">FAILED</span><span class="gray"> <br>- ERROR loading dependencies<br>- not all requirements for the success of the program were met.</span><br>&nbsp;',
+    strings: ['systemctl status fizzfluff^1000'],
+    output: '<span class="gray">+1 fizzfluff.service </span><span class="red">FAILED</span><span class="gray"> <br>- ERROR loading dependencies<br>- not all requirements for the success of the program were met.</span><br>&nbsp;',
     postDelay: 1000 },
   {
     action: 'type',
@@ -169,7 +169,7 @@ $(function () {
     postDelay: 1000 },
   {
     action: 'type',
-    strings: ["Feel free to talk to me, my discord is (fuskytailOvO), I'm happy to talk and help <3^1000"],
+    strings: ["Feel free to talk to me, my discord is (fizzfluffs), I'm happy to talk and help <3^1000"],
     postDelay: 1000 }];
   
 
